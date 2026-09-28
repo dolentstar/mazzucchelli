@@ -65,7 +65,7 @@ section { padding: 56px 16px; max-width: 1180px; margin: 0 auto; }
 .macchine-lista span { color: #3A424A; }
 
 .settori-serviti { background: var(--blu); color: #fff; max-width: none; }
-.settori-serviti > * { max-width: 1148px; margin-left: auto; margin-right: auto; }
+.settori-serviti > * { max-width: 1116px; margin-left: auto; margin-right: auto; }
 .elenco { font-size: clamp(1.2rem, 4.4vw, 1.9rem); font-weight: 700; line-height: 1.45; color: #D6DEE6; margin-top: 12px; }
 
 .azienda-grid { display: grid; gap: 28px; }
@@ -81,7 +81,7 @@ section { padding: 56px 16px; max-width: 1180px; margin: 0 auto; }
 .stato .aperto { color: #1F6B3C; }
 .stato .chiuso { color: #9A3B2A; }
 .orari { border-collapse: collapse; width: 100%; max-width: 400px; }
-.orari caption { text-align: left; font-weight: 700; padding-bottom: 6px; }
+.orari-t { font-size: 1.1rem; margin: 24px 0 6px; letter-spacing: 0; }
 .orari td, .orari th { padding: 6px 0; border-bottom: 1px solid #BFC3C0; text-align: left; font-weight: 400; }
 iframe { width: 100%; height: 320px; border: 2px solid var(--inchiostro); border-radius: 4px; filter: grayscale(.6); }
 
