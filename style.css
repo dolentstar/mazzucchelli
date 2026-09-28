@@ -1,0 +1,111 @@
+:root {
+  --ral: #E3E4E0;
+  --blu: #2C4A66;
+  --blu-scuro: #213A51;
+  --cartellino: #F5F2E8;
+  --ottone: #B8913F;
+  --inchiostro: #1C2229;
+  --grigio: #5A636B;
+  --f: 'Schibsted Grotesk', system-ui, sans-serif;
+}
+[hidden] { display: none !important; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+body { margin: 0; background: var(--ral); color: var(--inchiostro); font: 400 1.0625rem/1.6 var(--f); padding-bottom: 60px; -webkit-font-smoothing: antialiased; }
+a { color: var(--blu); }
+:focus-visible { outline: 3px solid var(--ottone); outline-offset: 3px; }
+h1, h2, h3 { font-weight: 800; line-height: 1.06; letter-spacing: -.025em; text-wrap: balance; margin: 0 0 .45em; }
+h1 { font-size: clamp(2.1rem, 8vw, 4.2rem); max-width: 19ch; }
+h2 { font-size: clamp(1.7rem, 5.6vw, 2.7rem); max-width: 22ch; }
+section { padding: 56px 16px; max-width: 1180px; margin: 0 auto; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+
+.top { position: sticky; top: 0; z-index: 5; display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; background: var(--ral); border-bottom: 2px solid var(--inchiostro); }
+.logo { font-weight: 800; font-size: 1.3rem; letter-spacing: -.02em; color: var(--inchiostro); text-decoration: none; display: flex; align-items: baseline; gap: 10px; }
+.logo span { font-weight: 500; font-size: .85rem; color: var(--grigio); letter-spacing: 0; }
+.top nav { display: none; gap: 28px; }
+.top nav a { color: var(--inchiostro); text-decoration: none; font-weight: 500; }
+
+.apertura { padding-top: 40px; padding-bottom: 24px; }
+.apertura p { font-size: 1.15rem; max-width: 54ch; color: #3A424A; margin: 0; }
+
+/* La cassettiera */
+.catalogo { padding-top: 16px; }
+.catalogo-testa { margin-bottom: 20px; }
+.cerca input { width: 100%; max-width: 520px; font: 500 1.15rem var(--f); padding: 14px 16px; border: 2px solid var(--inchiostro); border-radius: 4px; background: #fff; color: var(--inchiostro); }
+.settori { display: flex; gap: 8px; overflow-x: auto; margin: 12px -16px 0; padding: 0 16px 6px; }
+.settori button { flex: 0 0 auto; min-height: 44px; padding: 0 14px; font: 500 .95rem var(--f); border: 1.5px solid var(--inchiostro); border-radius: 22px; background: transparent; color: var(--inchiostro); cursor: pointer; }
+.settori button[aria-pressed="true"] { background: var(--inchiostro); color: #fff; }
+
+.mobile { background: var(--blu); padding: 14px; border-radius: 6px; box-shadow: inset 0 0 0 3px var(--blu-scuro); display: grid; gap: 18px; }
+.targa { margin: 0 0 8px; color: #fff; font-weight: 700; font-size: .95rem; display: inline-block; border-bottom: 2px solid var(--ottone); }
+.cassetti { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+.cassetto { position: relative; display: flex; flex-direction: column; align-items: center; gap: 10px; min-height: 104px; padding: 10px 8px 14px; background: var(--blu-scuro); border: 0; border-radius: 3px; box-shadow: inset 0 -3px 0 rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.08); cursor: pointer; font: inherit; color: var(--inchiostro); transition: transform .18s ease, box-shadow .18s ease; }
+.cartellino { width: 100%; flex: 1; display: grid; place-items: center; background: var(--cartellino); border: 1px solid #C9C2AC; padding: 6px 6px; font-size: .86rem; font-weight: 500; line-height: 1.25; text-align: center; }
+.maniglia { width: 44%; height: 9px; border-radius: 5px; background: linear-gradient(#D9B865, var(--ottone) 60%, #8C6C2A); }
+.cassetto:hover { transform: translateY(-2px); }
+.cassetto[aria-expanded="true"] { transform: translateY(6px) scale(1.03); box-shadow: 0 14px 20px -8px rgba(0,0,0,.6), 0 0 0 3px var(--ottone); z-index: 1; }
+.vuoto { padding: 16px 0 0; }
+
+.aperto { grid-column: 1 / -1; margin: 2px 0 6px; background: var(--cartellino); border-radius: 4px; padding: 20px; border-top: 6px solid var(--ottone); }
+.aperto-settore { margin: 0 0 4px; color: var(--grigio); font-size: .9rem; font-weight: 500; }
+.aperto h3 { font-size: 1.5rem; margin-bottom: 8px; }
+.aperto p { margin: 0 0 16px; max-width: 56ch; }
+.btn { display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; background: var(--ottone); color: var(--inchiostro); font-weight: 700; text-decoration: none; border-radius: 4px; }
+.btn:hover { background: #C9A254; }
+.chiudi { margin-left: 8px; min-height: 48px; padding: 0 14px; background: none; border: 0; font: 500 1rem var(--f); color: var(--blu); text-decoration: underline; cursor: pointer; }
+
+.macchine { border-top: 2px solid var(--inchiostro); }
+.sotto { max-width: 56ch; color: #3A424A; margin: 0 0 24px; }
+.macchine-lista { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+.macchine-lista li { display: grid; grid-template-columns: 52px 1fr; column-gap: 16px; padding: 16px 0; border-bottom: 1px solid #BFC3C0; }
+.macchine-lista svg { grid-row: span 2; width: 52px; height: 52px; fill: none; stroke: var(--blu); stroke-width: 3; }
+.macchine-lista b { font-size: 1.2rem; }
+.macchine-lista span { color: #3A424A; }
+
+.settori-serviti { background: var(--blu); color: #fff; max-width: none; }
+.settori-serviti > * { max-width: 1148px; margin-left: auto; margin-right: auto; }
+.elenco { font-size: clamp(1.2rem, 4.4vw, 1.9rem); font-weight: 700; line-height: 1.45; color: #D6DEE6; margin-top: 12px; }
+
+.azienda-grid { display: grid; gap: 28px; }
+.azienda p { margin: 0; max-width: 58ch; font-size: 1.1rem; }
+.fatti { list-style: none; margin: 0; padding: 0; }
+.fatti li { padding: 12px 0; border-bottom: 1px solid #BFC3C0; }
+.fatti b { display: block; }
+
+.contatti { border-top: 2px solid var(--inchiostro); }
+.contatti-grid { display: grid; gap: 28px; }
+.contatti-grid a { font-weight: 700; }
+.stato [data-stato] { font-weight: 700; padding: 6px 12px; border-radius: 16px; background: #fff; }
+.stato .aperto { color: #1F6B3C; }
+.stato .chiuso { color: #9A3B2A; }
+.orari { border-collapse: collapse; width: 100%; max-width: 400px; }
+.orari caption { text-align: left; font-weight: 700; padding-bottom: 6px; }
+.orari td, .orari th { padding: 6px 0; border-bottom: 1px solid #BFC3C0; text-align: left; font-weight: 400; }
+iframe { width: 100%; height: 320px; border: 2px solid var(--inchiostro); border-radius: 4px; filter: grayscale(.6); }
+
+footer { text-align: center; padding: 28px 16px 36px; font-size: .9rem; color: var(--grigio); border-top: 1px solid #BFC3C0; }
+footer p { margin: 4px 0; }
+
+.barra { position: fixed; bottom: 0; left: 0; right: 0; z-index: 6; display: grid; grid-template-columns: 1fr 1.3fr 1fr; background: var(--inchiostro); }
+.barra a { color: #fff; text-decoration: none; text-align: center; font-weight: 700; padding: 17px 4px; }
+.barra .primario { background: var(--ottone); color: var(--inchiostro); }
+
+@media (min-width: 900px) {
+  body { padding-bottom: 0; }
+  .barra { display: none; }
+  .top { padding: 14px 32px; }
+  .top nav { display: flex; }
+  section { padding: 88px 32px; }
+  .apertura { padding-top: 72px; padding-bottom: 32px; }
+  .catalogo { padding-top: 16px; }
+  .catalogo-testa { display: grid; grid-template-columns: 1fr 1fr; align-items: end; gap: 12px 32px; }
+  .catalogo-testa h2 { grid-row: span 2; margin: 0; }
+  .settori { margin: 0; padding: 0; flex-wrap: wrap; }
+  .mobile { padding: 22px; }
+  .cassetti { grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 10px; }
+  .macchine-lista { grid-template-columns: 1fr 1fr; column-gap: 48px; }
+  .azienda-grid { grid-template-columns: 1.2fr 1fr; gap: 64px; }
+  .contatti-grid { grid-template-columns: 1fr 1.3fr; gap: 56px; }
+}
